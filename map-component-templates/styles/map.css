@@ -1,0 +1,62 @@
+/* Interactive US Map Styles */
+
+.interactive-map {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 360px;
+}
+
+.interactive-map svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.map-loader,
+.map-error {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.map-error p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.08);
+  max-width: 320px;
+}
+
+.states-layer path:focus-visible,
+.labels-layer text:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.state-path {
+  transition: transform 0.18s ease, fill 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.state-label-text {
+  fill: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 600;
+  text-shadow: none;
+  cursor: pointer;
+}
